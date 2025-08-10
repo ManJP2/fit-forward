@@ -1,0 +1,67 @@
+/* style.css */
+:root{
+  --orange:#FF6B00;
+  --black:#000;
+  --white:#fff;
+  --muted:#6b7280;
+  --bg:#f6f7f8;
+  --card:#fff;
+  --accent:#FFD4B2;
+  --round:10px;
+  --shadow: 0 8px 28px rgba(0,0,0,0.08);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter, "Segoe UI", Arial, sans-serif}
+body{background:var(--bg);color:var(--black);min-height:100vh;line-height:1.45}
+.container{max-width:980px;margin:20px auto;padding:0 16px}
+.center{display:flex;align-items:center;justify-content:center;height:100vh}
+.card{background:var(--card);padding:18px;border-radius:var(--round);box-shadow:var(--shadow)}
+.logo{height:72px;margin:0 auto 12px;display:block}
+h1,h2,h3{margin-bottom:8px}
+.muted{color:var(--muted);font-size:0.95rem}
+
+/* Buttons */
+.btn{padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+.primary-btn{background:var(--orange);color:var(--white)}
+.secondary-btn{background:#fff;border:1px solid #e6e6e6;color:var(--black)}
+.icon{width:20px;height:20px}
+
+/* Navbar */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#000;color:#fff;border-bottom:1px solid rgba(255,255,255,0.06)}
+
+/* Profile page */
+.row{display:flex;gap:12px;align-items:center}
+.row.spaced{display:flex;justify-content:space-between;align-items:center}
+.input-field{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-top:8px}
+.select{padding:10px;border-radius:8px;border:1px solid #e6e6e6;background:#fff}
+
+/* modal */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);z-index:200}
+.modal-card{width:100%;max-width:720px;background:#fff;padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+.hidden{display:none}
+
+/* list & cards */
+.plans-list{margin-top:12px;display:grid;gap:10px}
+.plan-item{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:8px;border:1px solid #eee;background:#fff}
+.log-list{margin-top:12px;display:grid;gap:10px}
+.log-item{background:#fff;padding:12px;border-radius:8px;border:1px solid #eee;display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.log-meta{color:var(--muted);font-size:0.95rem}
+
+/* entry sets */
+.entry-set{display:flex;gap:8px;align-items:center;margin-top:8px}
+.entry-set input[type="number"], .entry-set input[type="text"]{flex:1;padding:8px;border-radius:8px;border:1px solid #e6e6e6}
+
+/* group lists */
+.month-group{margin-top:12px}
+.month-header{display:flex;justify-content:space-between;align-items:center;padding:8px;border-radius:8px;background:#fff;border:1px solid #eee}
+.day-list{margin-top:8px;padding-left:12px}
+
+/* autocomplete */
+.autocomplete-list{position:absolute;left:0;right:0;top:100%;background:#fff;border:1px solid #eee;border-radius:8px;max-height:180px;overflow:auto;z-index:80}
+.autocomplete-list li{padding:8px;cursor:pointer}
+.autocomplete-list li:hover{background:var(--accent)}
+.add-new-exercise{font-style:italic;color:var(--orange);padding:8px}
+
+/* responsive */
+@media (max-width:700px){ .modal-card{margin:12px} .navbar{padding:10px} .row{flex-direction:column;align-items:stretch} }
+

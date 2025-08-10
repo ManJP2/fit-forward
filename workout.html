@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workout Plan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Workout Plan</h1>
+    <button id="show-form-btn" class="btn-primary">+ เพิ่มท่าออกกำลังกาย</button>
+  </header>
+
+  <main>
+    <div id="empty-state">ยังไม่มีบันทึกการออกกำลังกาย</div>
+    <div class="workout-list"></div>
+
+    <!-- ฟอร์มเพิ่ม workout -->
+    <form id="add-workout-form" class="hidden">
+      <label>ชื่อท่าออกกำลังกาย</label>
+      <input type="text" id="exercise-name" placeholder="เช่น Bench Press" required>
+
+      <label>กลุ่มกล้ามเนื้อ</label>
+      <select id="muscle-group" required>
+        <option value="Chest">อก</option>
+        <option value="Back">หลัง</option>
+        <option value="Legs">ขา</option>
+        <option value="Shoulders">ไหล่</option>
+        <option value="Arms">แขน</option>
+        <option value="Cardio">คาร์ดิโอ</option>
+      </select>
+
+      <label>Sets</label>
+      <div id="sets-container"></div>
+      <button type="button" id="add-set-btn" class="btn-secondary">+ เพิ่มเซต</button>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">บันทึก</button>
+        <button type="button" id="cancel-btn" class="btn-secondary">ยกเลิก</button>
+      </div>
+    </form>
+
+    <ul id="autocomplete-list"></ul>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

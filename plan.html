@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Plan View — Fit App</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="https://dummyimage.com/80x40/000/fff&text=Logo" alt="Logo" style="height:36px">
+      <strong>Fit App</strong>
+    </div>
+    <div>
+      <a href="profile.html" class="btn secondary-btn">Back</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2 id="plan-title">Plan</h2>
+      <p id="plan-meta" class="muted"></p>
+
+      <div style="margin-top:12px">
+        <h3>Months</h3>
+        <div id="months-list" class="list-group"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Entry detail modal -->
+  <div id="entry-modal" class="modal hidden">
+    <div class="modal-card">
+      <h3 id="entry-modal-title">Entry details</h3>
+      <div id="entry-detail-body" class="entry-detail"></div>
+      <div style="margin-top:12px" class="row">
+        <button id="close-entry-detail" class="btn secondary-btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="plan.js"></script>
+</body>
+</html>

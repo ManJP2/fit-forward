@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profile — Fit App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="img/logo1 .png" alt="Logo" style="height:36px">
+      <strong>Fit App</strong>
+    </div>
+    <div>
+      <button id="export-all-csv" class="btn secondary-btn" title="Export all logs for my plans">Export CSV</button>
+      <button id="logout-btn" class="btn primary-btn">Logout</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>โปรไฟล์</h2>
+      <div id="user-info" class="muted">Loading...</div>
+    </section>
+
+    <section class="card" style="margin-top:12px">
+      <div class="row spaced">
+        <h3>Plans</h3>
+        <div>
+          <button id="create-plan-btn" class="btn primary-btn">สร้างแผนใหม่</button>
+        </div>
+      </div>
+
+      <div style="margin-top:12px; display:flex; gap:12px; align-items:center;">
+        <select id="plan-selector" class="select" style="max-width:60%;">
+          <option value="">-- เลือกแผน --</option>
+        </select>
+
+        <div id="plan-actions" class="hidden">
+          <button id="open-plan-btn" class="btn secondary-btn">Open</button>
+          <button id="share-plan-btn" class="btn secondary-btn">Share</button>
+          <button id="delete-plan-btn" class="btn secondary-btn">Delete</button>
+        </div>
+      </div>
+
+      <div id="plan-preview" style="margin-top:12px" class="hidden">
+        <h4>Preview: <span id="plan-preview-name"></span></h4>
+        <div id="plan-meta" class="muted"></div>
+      </div>
+
+      <div id="log-section" class="hidden" style="margin-top:12px">
+        <div class="row spaced">
+          <h4>Logs</h4>
+          <div>
+            <button id="add-log-btn" class="btn primary-btn">+ Add Workout</button>
+            <button id="export-plan-csv" class="btn secondary-btn">Export Plan CSV</button>
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <div id="months-root" class="month-group"></div>
+          <ul id="logs-list" class="log-list"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Create plan modal -->
+  <div id="plan-modal" class="modal hidden">
+    <div class="modal-card">
+      <h3>Create Plan</h3>
+      <input id="plan-name-input" class="input-field" placeholder="Plan name (e.g., 12-wk strength)" />
+      <div style="margin-top:8px" class="row">
+        <button id="save-plan-btn" class="btn primary-btn">Save</button>
+        <button id="cancel-plan-btn" class="btn secondary-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Share plan modal -->
+  <div id="share-modal" class="modal hidden">
+    <div class="modal-card">
+      <h3>Share Plan (Add UID)</h3>
+      <p class="muted">กรอก UID ของผู้ใช้ที่ต้องการแชร์</p>
+      <input id="share-uid-input" class="input-field" placeholder="UID ของผู้รับ" />
+      <div style="margin-top:8px" class="row">
+        <button id="save-share-btn" class="btn primary-btn">Add</button>
+        <button id="close-share-btn" class="btn secondary-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add/Edit Log modal -->
+  <div id="log-modal" class="modal hidden">
+    <div class="modal-card">
+      <h3 id="log-modal-title">Add Workout Log</h3>
+
+      <label>วันที่</label>
+      <input id="log-date" type="date" class="input-field" />
+
+      <label style="margin-top:8px">ท่า</label>
+      <div style="position:relative">
+        <input id="log-exercise" class="input-field" placeholder="พิมพ์ค้นหาหรือเพิ่มใหม่..." />
+        <ul id="autocomplete-list" class="autocomplete-list"></ul>
+      </div>
+
+      <div id="entry-sets-container" style="margin-top:12px"></div>
+
+      <div style="margin-top:8px" class="row">
+        <button id="log-add-set" class="btn secondary-btn">+ Add Set</button>
+      </div>
+
+      <div style="margin-top:12px" class="row">
+        <button id="save-log-btn" class="btn primary-btn">Save</button>
+        <button id="cancel-log-btn" class="btn secondary-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="profile.js"></script>
+</body>
+
+</html>

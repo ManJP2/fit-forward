@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <img src="https://dummyimage.com/80x40/000/fff&text=Logo" alt="Logo" class="logo">
+    <button id="logout-btn" class="btn logout-btn">Logout</button>
+  </nav>
+  <main class="dashboard">
+    <section class="summary-card">
+      <h2>Today's Summary</h2>
+      <div id="summary-content" class="hidden">
+        <p><strong>Exercises Logged:</strong> <span id="exercises-count">0</span></p>
+        <p><strong>Sets Completed:</strong> <span id="sets-completed-count">0</span></p>
+      </div>
+      <p id="summary-loading">Loading stats...</p>
+      <p id="summary-empty" class="hidden">No workouts logged for today. Go add one!</p>
+    </section>
+    <a href="workout.html" class="btn primary-btn cta-btn">Go to Workout Plan</a>
+  </main>
+
+  <script type="module" src="auth-guard.js"></script>
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>
